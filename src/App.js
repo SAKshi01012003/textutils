@@ -5,11 +5,11 @@ import Navbar from "./component/Navbar";
 import TextForm from "./component/TextForm";
 import React, { useState } from "react";
 
-// import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState("light");
-  const [modeText, setModeText] = useState("Dark mode");
+  const [modeText, setModeText] = useState(" Turn on Dark mode");
   const [alert, setAlert] = useState(" ");
   const [background, setBackground] = useState("black");
 
@@ -27,12 +27,12 @@ function App() {
     if (mode === "light") {
       setMode("dark");
       document.body.style.backgroundColor = "black";
-      setModeText("Light Mode");
+      setModeText("Turn on Light Mode");
       showAlert("Dark mode on!!", "success");
     } else {
       setMode("light");
       document.body.style.backgroundColor = "white";
-      setModeText("Dark mode");
+      setModeText("Turn on Dark mode");
       showAlert("Light mode on!!", "success");
     }
   };
@@ -44,11 +44,11 @@ function App() {
 
   return (
     <>
-      {/* <Router>
+      <Router>
         <div>
           <Navbar
             title="SakshiApp"
-            aboutText="About Sakshi"
+            aboutText="About TextUtil"
             mode={mode}
             toggleMode={toggleMode}
             modeText={modeText}
@@ -56,7 +56,7 @@ function App() {
           />
           <Alert alert={alert} showAlert={showAlert} />
           <Routes>
-            <Route path="/about" element={<About />} />
+            <Route path="/about" element={<About  mode={mode} />} />
             <Route
               path="/"
               element={
@@ -69,9 +69,9 @@ function App() {
             />
           </Routes>
         </div>
-      </Router> */}
+      </Router>
 
-      <Navbar
+      {/* <Navbar
         title="SakshiApp"
         aboutText="About Sakshi"
         mode={mode}
@@ -85,7 +85,7 @@ function App() {
         heading="Enter your text to analyse"
         mode={mode}
         showAlert={showAlert}
-      />
+      /> */}
     </>
   );
 }

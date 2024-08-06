@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 export default function Navbar(props) {
 
   const handleColorChange=(color)=>{
@@ -15,21 +15,21 @@ export default function Navbar(props) {
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
           <li className="nav-item">
-            {/* <Link className="nav-link active" aria-current="page" to="/">Home</Link> */}
-            <a className="nav-link active" aria-current="page" href="#">Home</a>
+            <Link className="nav-link active" aria-current="page" to="/">Home</Link>
+            {/* <a className="nav-link active" aria-current="page" href="#">Home</a> */}
 
           </li>
-          {/* <li className="nav-item">
+          <li className="nav-item">
             <Link className="nav-link" to="/about">{props.aboutText}</Link>
-          </li> */}
+          </li>
         </ul>
 
-        <div className="palette d-flex flex-row mb-3 my-3 mx-4">
-              <div className="p-2" style={{ backgroundColor: '#5F264A', width: 40, height: 40 }} onClick={() => handleColorChange('#5F264A')}></div>
+        {/* <div className="palette d-flex flex-row mb-3 my-3 mx-4"> */}
+              {/* <div className="p-2" style={{ backgroundColor: '#5F264A', width: 40, height: 40 }} onClick={() => handleColorChange('#5F264A')}></div> */}
               {/* <div className="p-2" style={{ backgroundColor: '#03045e', width: 40, height: 40 }} onClick={() => handleColorChange('#03045e')}></div> */}
-              <div className="p-2" style={{ backgroundColor: '#254336', width: 40, height: 40 }} onClick={() => handleColorChange('#254336')}></div>
+              {/* <div className="p-2" style={{ backgroundColor: '#254336', width: 40, height: 40 }} onClick={() => handleColorChange('#254336')}></div> */}
               {/* <div className="p-2" style={{ backgroundColor: '#6B240C', width: 40, height: 40 }} onClick={() => handleColorChange('#6B240C')}></div> */}
-          </div>
+          {/* </div> */}
 
 
         <div className={`form-check form-switch text-${props.mode==='light'?'dark':'light'}`}>

@@ -75,10 +75,10 @@ export default function TextForm(props) {
         <textarea className= {`form-control bg-${props.mode==='light'?'light':'dark'}  text-${props.mode==='light'?'dark':'light'}`} value={text} onChange={handleOnChange} id="my-Box"  rows="7"></textarea>
         </div>
         <div className="d-flex">
-        <button type="button" className="btn btn-primary mx-3 "  onClick={handleUpperCaseClick} >UPPERCASE</button>
-        <button type="button" className="btn btn-primary mx-3" onClick={handleLowerCaseClick} >lowrcase</button>
-        <button type="button" className="btn btn-primary mx-3" onClick={handSentenceCaseClick} >Sentence Case</button>
-        <button type="button" className="btn btn-success mx-3" onClick={copyToClipboard}>Copy</button>
+        <button disabled={text.length===0} type="button" className="btn btn-primary mx-3 "  onClick={handleUpperCaseClick} >UPPERCASE</button>
+        <button  disabled={text.length===0} type="button" className="btn btn-primary mx-3" onClick={handleLowerCaseClick} >lowrcase</button>
+        <button  disabled={text.length===0} type="button" className="btn btn-primary mx-3" onClick={handSentenceCaseClick} >Sentence Case</button>
+        <button  disabled={text.length===0} type="button" className="btn btn-success mx-3" onClick={copyToClipboard}>Copy</button>
 
         <button type="button" className="btn btn-danger mx-3" onClick={hancleClearTextClick}>Clear</button>
         <div className="col-sm-2">
@@ -91,7 +91,7 @@ export default function TextForm(props) {
     <div className={`container my-5 text-${props.mode==='light'?'dark':'light'} `}>
       <h3>Summary</h3>
       <p>No of characters :{charCount} </p>
-      <p>No of words : {text.trim().split(" ").length} </p>
+      <p>No of words : {text.split(" ").filter((element)=>{return element.length!==0}).length} </p>
       <p>No of sentances: {text.trim().split(".").length} </p>
 
       <h4>Preview</h4>
